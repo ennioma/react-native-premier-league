@@ -8,15 +8,21 @@ var {
 
 module.exports = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'column',
   },
   teamTitle: {
     marginTop: 64,
+    marginLeft: 10,
     fontSize: 15,
-    textAlign: 'center',
+    textAlign: 'left',
     color: '#4C2D73',
     height: 35,
   },
+  teamMainImage: {
+    height: 100,
+    width: 100,
+    marginTop: 5,
+    alignItems: 'center',
+  }
 });

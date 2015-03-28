@@ -2,6 +2,8 @@
 
 var React = require('react-native');
 
+var images = require('./../../../utils/imagesData.js');
+
 var styles = require('./style');
 
 var {
@@ -16,16 +18,20 @@ var TeamDetail = React.createClass({
     };
   },
   componentDidMount: function() {
-    console.log('Download ' + this.props.team.crestUrl);
+
   },
   render: function() {
     return(
       <View style={styles.container}>
         <Text style={styles.teamTitle}>
-          {this.props.team.name} | {this.props.team.squadMarketValue}
+          {this.props.team.name}
+        </Text>
+        <Text style={styles.teamTitle}>
+          {this.props.team.squadMarketValue}
         </Text>
         <Image
-          source={{uri: this.props.team.crestUrl}}/>
+          source={{uri: images[this.props.team.code]}}
+          style={styles.teamMainImage} />
       </View>
     );
   },
