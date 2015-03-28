@@ -59,18 +59,18 @@ var TeamsView = React.createClass({
   renderListView: function(){
     return(
       <View style={styles.container}>
-        <View>
-          <Text style={styles.warningText}>
-            Just downloaded #{this.state.teams.length} teams
-          </Text>
-        </View>
+        <Text style={styles.warningText}>
+          Downloaded #{this.state.teams.length} teams
+        </Text>
         <ListView
+          style={styles.listView}
           dataSource={this.state.dataSource}
           renderRow={this.renderTeamCell}/>
       </View>
     );
   },
   renderTeamCell: function(team){
+    console.log('Rendering : ' + team.name);
     return(
       <TeamCell
         onSelect={() => this.selectTeam(team)}
@@ -78,7 +78,6 @@ var TeamsView = React.createClass({
     );
   },
   selectTeam: function(team){
-    console.log(team);
     this.props.navigator.push({
       title: team.name + " details",
       component: TeamDetail,
