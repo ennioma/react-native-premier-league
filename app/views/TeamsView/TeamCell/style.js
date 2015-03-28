@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 var React = require('react-native');
 
@@ -10,17 +10,16 @@ module.exports = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#4C2D73',
     height: 60,
   },
   teamTitle: {
     flex: 1,
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
+    marginLeft: 15,
     color: '#FFFFFF'
   },
   teamThumbnail: {
