@@ -15,7 +15,7 @@ var PremierLeague = React.createClass({
     return (
       <NavigatorIOS
         style={styles.container}
-        tintColor='#FF6600'
+        tintColor='#4C2D73'
         initialRoute={{
           title: 'Premier League browser',
           component: TeamsView,
