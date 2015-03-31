@@ -5,6 +5,7 @@ var React = require('react-native');
 var styles = require('./style');
 
 var {
+  ActivityIndicatorIOS,
   Text,
   View,
   ListView,
@@ -42,35 +43,38 @@ var TeamsView = React.createClass({
       .done();
   },
   render: function() {
+    return(
+      <ListView
+        style={styles.listView}
+        dataSource={this.state.dataSource}
+        renderFooter={this._renderFooterSpinner}
+        renderHeader={this._renderHeader}
+        renderRow={this._renderTeamCell}/>
+    );
+  },
+
+  _renderHeader: function(){
     if (!this.state.loaded){
       return(
-        <View style={styles.container}>
-          <Text style={styles.loadingText}>
-            Loading Teams from the server ...
-          </Text>
-        </View>
+        <Text style={styles.loadingText}>
+          Loading Teams from the server ...
+        </Text>
       );
     } else {
       return(
-        this.renderListView()
+        <Text style={styles.loadingText}>
+          #{this.state.teams.length} teams downloaded!
+        </Text>
       );
     }
   },
-  renderListView: function(){
-    return(
-      <View style={styles.container}>
-        <Text style={styles.warningText}>
-          Downloaded #{this.state.teams.length} teams
-        </Text>
-        <ListView
-          style={styles.listView}
-          dataSource={this.state.dataSource}
-          renderRow={this.renderTeamCell}/>
-      </View>
-    );
+  _renderFooterSpinner: function() {
+    if (!this.state.loaded) {
+      return <ActivityIndicatorIOS />;
+    }
+    return null;
   },
-  renderTeamCell: function(team){
-    console.log('Rendering : ' + team.name);
+  _renderTeamCell: function(team){
     return(
       <TeamCell
         onSelect={() => this.selectTeam(team)}
