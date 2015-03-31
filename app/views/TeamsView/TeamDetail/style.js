@@ -22,7 +22,7 @@ module.exports = StyleSheet.create({
   teamMainImage: {
     height: 100,
     width: 100,
-    marginTop: 5,
-    alignItems: 'center',
+    marginTop: 64,
+    alignSelf: 'center',
   }
 });

@@ -23,12 +23,6 @@ var TeamDetail = React.createClass({
   render: function() {
     return(
       <View style={styles.container}>
-        <Text style={styles.teamTitle}>
-          {this.props.team.name}
-        </Text>
-        <Text style={styles.teamTitle}>
-          {this.props.team.squadMarketValue}
-        </Text>
         <Image
           source={{uri: images[this.props.team.code]}}
           style={styles.teamMainImage} />
