@@ -11,18 +11,23 @@ module.exports = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     flexDirection: 'column',
   },
-  teamTitle: {
-    marginTop: 64,
+  separator: {
+    height: 0.8,
+    alignSelf: 'center',
     marginLeft: 10,
-    fontSize: 15,
-    textAlign: 'left',
-    color: '#4C2D73',
-    height: 35,
+    marginRight: 10,
+    marginTop: 10,
+    backgroundColor: '#7BADE5',
   },
   teamMainImage: {
     height: 100,
     width: 100,
-    marginTop: 64,
     alignSelf: 'center',
+    marginTop: 10,
+  },
+  teamName: {
+    alignSelf: 'center',
+    color: '#7BADE5',
+    fontSize: 20,
   }
 });
